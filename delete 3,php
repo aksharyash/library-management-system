@@ -1,0 +1,26 @@
+<?php
+    session_start();
+    include'connection.php';
+
+    $sql = "SELECT *FROM booklist WHERE book_id='".$_GET['id']."'";
+  $result = mysqli_query($conn, $sql);
+   $row = mysqli_fetch_assoc($result);
+    
+    ?>
+
+    </body>
+<?php
+   
+include'connection.php';
+$sql = "DELETE FROM booklist WHERE book_id='".$_GET['id']."'";
+
+if (mysqli_query($conn, $sql)) {
+    echo "<script>alert('successfully deleted') </script>";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+    
+    
+?>

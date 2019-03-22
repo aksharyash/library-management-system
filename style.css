@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:url(com.jpg) ;
+    background-size:cover;
+    background-position:auto;
+    font-family: sans-serif;
+    
+}
+
+.adminlogin{
+    width: 320px;
+    height: 420px;
+    background:#000;
+    color:#fff;
+    top:50%;
+    left:20%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    opacity: 0.5;
+    padding: 70px 30px;
+    
+}
+
+
+.studentlogin{
+    width: 320px;
+    height: 420px;
+    background:#000;
+    color:#fff;
+    top:50%;
+    right:10%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    opacity: 0.5;
+    padding: 70px 30px;
+}
+
+
+
+
+h1{
+    text-align: center;
+    font-size: 80px;
+    color: white;
+}

@@ -1,0 +1,47 @@
+ <?php
+    session_start();
+    include'connection.php';
+
+  $sql = "SELECT *FROM book_list WHERE id='".$_GET['id']."'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+    
+    ?>
+<html>
+<head>
+</head>    
+<body>
+<form method="POST" action="">
+<label> isbn</label>
+<input type="text" value="<?php echo ''; ?>" name="isbn">
+    <label>title</label>
+<input type="text" value="<?php echo ''; ?>" name="title">
+    <label>author</label>
+    <input type="text" value="<?php echo ''; ?>" name="author">
+    <label>edition</label>
+    <input type="text" value="<?php echo ''; ?>" name="edition">
+    <label>publication</label>
+    <input type="text" value="<?php echo ''; ?>" name="publication">
+<input type="submit" name="submit" value="Update">
+</form>
+</body>
+</html>    
+<?php
+    if(isset($_POST['submit']))
+    {
+include'connection.php';
+$sql = "UPDATE book_list SET isbn='".$_POST['isbn']."',title='".$_POST['title']."',author='".$_POST['author']."',edition='".$_POST['edition']."',publication='".$_POST['publication']."' WHERE id='".$_GET['id']."'";
+
+if (mysqli_query($conn, $sql)) {
+    echo "<script>alert('successfully Update') </script>";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+    }
+    
+?>
+
+
+
